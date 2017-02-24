@@ -1,0 +1,25 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<type name="Magento\Framework\App\RouterList">
+	<arguments>
+		<argument name="routerList" xsi:type="array">
+			<item name="training" xsi:type="array">
+				<item name="class"
+				xsi:type="string">Training\Test\Controller\Router</item>
+			<item name="disable" xsi:type="boolean">false</item>
+			<item name="sortOrder" xsi:type="string">70</item>
+			</item>
+		</argument>
+	</arguments>
+</type>
+<!-- <type name="Magento\Catalog\Controller\Product\View">
+<plugin name="product-view-controller-plugin"
+type="Training\Test\Controller\Product\View" sortOrder="10"/>
+</type> -->
+<!-- <preference for="Magento\Catalog\Controller\Product\View"
+type="Training\Test\Controller\Product\View" /> -->
+<!-- <type name="Magento\Catalog\Block\Product\View\Description">
+	<plugin name="product-view-desription-plugin"
+	type="Training\Test\Block\Product\View\Description" sortOrder="10"/>
+</type> -->
+</config>

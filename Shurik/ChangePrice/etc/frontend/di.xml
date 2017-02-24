@@ -1,0 +1,11 @@
+<config>
+  <type name="Magento\Catalog\Model\Product">
+    <plugin name="Shurik_ChangePrice" type="Shurik\ChangePrice\Plugin\Product" />
+  </type>
+  <type name="Magento\Theme\Block\Html\Footer">
+    <plugin name="Shurik_ChangePrice" type="Shurik\ChangePrice\Plugin\Footer" />
+  </type>
+  <type name="Magento\Theme\Block\Html\Breadcrumbs">
+    <plugin name="Shurik_ChangePrice" type="Shurik\ChangePrice\Plugin\CustomBreadcrumbs" />
+  </type>
+</config>
