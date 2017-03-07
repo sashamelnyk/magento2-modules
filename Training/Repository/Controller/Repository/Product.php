@@ -3,7 +3,7 @@ namespace Training\Repository\Controller\Repository;
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\Api\SearchCriteriaBuilder;
-//use Magento\Framework\Api\FilterBuilder;
+use Magento\Framework\Api\FilterBuilder;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 
@@ -17,7 +17,7 @@ class Product extends Action
 	* @var SearchCriteriaBuilder
 	*/
 	private $searchCriteriaBuilder;
-	//private $filterBuilder;
+	private $filterBuilder;
 
 	public function __construct(
 		Context $context,
@@ -62,9 +62,9 @@ class Product extends Action
 	{
 		$configProductFilter = $this->filterBuilder
 			->setField('type_id')
-			->setValue(ConfigurableProduct::TYPE_CODE)
+			->setValue(\Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE)
 			->setConditionType('eq')
 			->create();
-		$this->searchCriteriaBuilder->addFilter([$configProductFilter]);
+		$this->searchCriteriaBuilder->addFilters([$configProductFilter]);
 	}
 }
